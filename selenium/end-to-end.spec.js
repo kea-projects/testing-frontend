@@ -10,7 +10,7 @@ const TEACHER_USER = process.env.SELENIUM_TEACHER_USER || "";
 const TEACHER_PASS = process.env.SELENIUM_TEACHER_PASS || "";
 
 describe("Selenium End to End tests.", function () {
-  this.timeout(30000);
+  this.timeout(60000);
   let driver;
 
   beforeEach(async function () {
@@ -31,6 +31,8 @@ describe("Selenium End to End tests.", function () {
       // 3 | click | css=.css-taj3dd |
       await driver.findElement(By.css(".css-taj3dd")).click();
       // 4 | click | id=i0116 |
+      await driver.sleep(2000); // Need to wait for the Microsoft animation to finish for the button to become interactive
+
       await driver.findElement(By.id("i0116")).click();
       // 5 | type | id=i0116
       await driver.findElement(By.id("i0116")).sendKeys(STUDENT_USER);
@@ -69,6 +71,8 @@ describe("Selenium End to End tests.", function () {
       // 3 | click | css=.css-taj3dd |
       await driver.findElement(By.css(".css-taj3dd")).click();
       // 4 | click | id=i0116 |
+      await driver.sleep(2000); // Need to wait for the Microsoft animation to finish for the button to become interactive
+
       await driver.findElement(By.id("i0116")).click();
       // 5 | type | id=i0116
       await driver.findElement(By.id("i0116")).sendKeys(TEACHER_USER);
@@ -120,6 +124,8 @@ describe("Selenium End to End tests.", function () {
       // 3 | click | css=.css-taj3dd |
       await driver.findElement(By.css(".css-taj3dd")).click();
       // 4 | click | id=i0116 |
+      await driver.sleep(2000); // Need to wait for the Microsoft animation to finish for the button to become interactive
+
       await driver.findElement(By.id("i0116")).click();
       // 5 | type | id=i0116
       await driver.findElement(By.id("i0116")).sendKeys(TEACHER_USER);
@@ -153,6 +159,8 @@ describe("Selenium End to End tests.", function () {
       // 13 | click | css=.css-taj3dd |
       await studentDriver.findElement(By.css(".css-taj3dd")).click();
       // 14 | click | id=i0116 |
+      await studentDriver.sleep(2000); // Need to wait for the Microsoft animation to finish for the button to become interactive
+
       await studentDriver.findElement(By.id("i0116")).click();
       // 15 | type | id=i0116
       await studentDriver.findElement(By.id("i0116")).sendKeys(STUDENT_USER);
@@ -217,6 +225,8 @@ describe("Selenium End to End tests.", function () {
       // 3 | click | css=.css-taj3dd |
       await driver.findElement(By.css(".css-taj3dd")).click();
       // 4 | click | id=i0116 |
+      await driver.sleep(2000); // Need to wait for the Microsoft animation to finish for the button to become interactive
+
       await driver.findElement(By.id("i0116")).click();
       // 5 | type | id=i0116
       await driver.findElement(By.id("i0116")).sendKeys(TEACHER_USER);
@@ -250,6 +260,8 @@ describe("Selenium End to End tests.", function () {
       // 13 | click | css=.css-taj3dd |
       await studentDriver.findElement(By.css(".css-taj3dd")).click();
       // 14 | click | id=i0116 |
+      await studentDriver.sleep(2000); // Need to wait for the Microsoft animation to finish for the button to become interactive
+
       await studentDriver.findElement(By.id("i0116")).click();
       // 15 | type | id=i0116
       await studentDriver.findElement(By.id("i0116")).sendKeys(STUDENT_USER);
