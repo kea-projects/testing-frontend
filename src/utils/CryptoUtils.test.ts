@@ -7,24 +7,15 @@ describe("checks if the encrypting utilities work as expected", () => {
 
     const encryption = encryptObj(testUserDetails);
 
-    /*  TODO: Look into this
-        const expectedEncryption =
-          "U2FsdGVkX1+bHDW5IC9gC8T2y7uDG9+Jni8yX8RGh6+sQ439ustGbPoWNT/mNqKW";
-
-        I would like to do something like this, but this fails because the encryption is always different
-        expect(encryption).toEqual(expectedEncryption);
-    */
-
-    // I can instead, do smth like this, cuz I saw that all encryptions start with the same signature
     expect(encryption).toContain(expectedEncryptionSignature);
   });
 
-  test("checks that the an object can be encrypted and properly returned as an encrypted string", () => {
+  test("checks that the an object can be decrypted and properly returned as an object", () => {
     const testUserDetailsEncryption =
-      "U2FsdGVkX1+bHDW5IC9gC8T2y7uDG9+Jni8yX8RGh6+sQ439ustGbPoWNT/mNqKW";
-    const expectedDecryption = { role: "TEACHER" };
+      "U2FsdGVkX1+oT0BVdVtpSTrRhJ4/OPd6wqrAqQZjqNzq2QUvsFei9tHGq1nfGsBf";
+    const expectedDecryption = { role: "GUEST" };
 
-    const decryption = decryptObj(testUserDetailsEncryption, "");
+    const decryption = decryptObj(testUserDetailsEncryption, {});
 
     expect(decryption).toEqual(expectedDecryption);
   });
