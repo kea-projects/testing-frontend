@@ -282,7 +282,8 @@ describe("Selenium End to End tests.", function () {
       // 22 | click | css=.css-16nf58z |
       await studentDriver.findElement(By.css(".css-16nf58z")).click();
       // 23 | Check that the student attended successfully
-      // await studentDriver.sleep(1000); // Need to wait for the modal to show up
+      
+			// await studentDriver.sleep(1000); // Need to wait for the modal to show up
       const failureMessage = await studentDriver
         .findElement(By.id("toast-1-title"))
         .getText();
