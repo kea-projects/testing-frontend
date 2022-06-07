@@ -3,7 +3,6 @@ import CryptoJS from "crypto-js";
 const ENCRYPTION_KEY = process.env.REACT_APP_ENCRYPTION_KEY || "";
 
 export const encryptObj = (obj: unknown): string => {
-  console.log(ENCRYPTION_KEY);
   return CryptoJS.AES.encrypt(JSON.stringify(obj), ENCRYPTION_KEY).toString();
 };
 
