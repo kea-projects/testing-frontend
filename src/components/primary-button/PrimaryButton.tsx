@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Container } from "@chakra-ui/react";
 
 interface PrimaryButtonProps {
   children: string | JSX.Element;
@@ -14,8 +14,8 @@ export function PrimaryButton({
   onClick = () => {},
 }: PrimaryButtonProps) {
   return (
-    <Button variant={"primary"} width={width} size={size} onClick={onClick}>
+    <Container variant={"primary"} width={width} size={size} onClick={onClick}>
       {children}
-    </Button>
+    </Container>
   );
 }
